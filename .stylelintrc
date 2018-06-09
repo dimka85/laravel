@@ -1,0 +1,3 @@
+{
+    "extends": "c:/Program Files/nodejs/node_modules/stylelint-config-recommended-scss"
+}
