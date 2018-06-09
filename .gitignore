@@ -18,3 +18,4 @@ yarn-error.log
 /.env.dusk.local
 /.env.testing
 /laravel-echo-server.json
+/echo.log
