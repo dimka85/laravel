@@ -19,3 +19,4 @@ yarn-error.log
 /.env.testing
 /laravel-echo-server.json
 /echo.log
+/Envoy.blade.php
