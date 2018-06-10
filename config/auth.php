@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => env('AUTH_GUARDS_API_DRIVER', 'token'),
             'provider' => 'users',
         ],
     ],
