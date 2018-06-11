@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abcfd6777162c51a2aac4c71ccd71ce3",
+    "content-hash": "8bdbfca5df6b32dc8e8e938ac12a632a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -793,6 +793,62 @@
                 "validator"
             ],
             "time": "2018-04-10T10:11:19+00:00"
+        },
+        {
+            "name": "encore/redis-manager",
+            "version": "v0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/z-song/redis-manager.git",
+                "reference": "7888a01db0a78056e04dce757ea396d1d2f6e0fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/z-song/redis-manager/zipball/7888a01db0a78056e04dce757ea396d1d2f6e0fb",
+                "reference": "7888a01db0a78056e04dce757ea396d1d2f6e0fb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "~5.5",
+                "illuminate/support": "~5.5",
+                "php": ">=7.0.0",
+                "predis/predis": "^1.1"
+            },
+            "require-dev": {
+                "laravel/laravel": "~5.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Encore\\RedisManager\\RedisManagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Encore\\RedisManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "z-song",
+                    "email": "zosong@126.com"
+                }
+            ],
+            "description": "Redis manager for laravel",
+            "homepage": "https://github.com/z-song/redis-manager",
+            "keywords": [
+                "laravel",
+                "manager",
+                "redis"
+            ],
+            "time": "2018-04-24T09:26:34+00:00"
         },
         {
             "name": "erusev/parsedown",
