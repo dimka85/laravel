@@ -28,6 +28,8 @@ install:
 before_script:
   - php artisan key:generate
   - php artisan migrate
+  - pear install pear/PHP_CodeSniffer
+  - npm install npm@latest -g
   - npm install
   - npm run production
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
@@ -36,3 +38,4 @@ before_script:
 script:
   - vendor/bin/phpunit
   - php artisan dusk
+  - phpcs
