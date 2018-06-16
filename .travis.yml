@@ -28,7 +28,6 @@ install:
 before_script:
   - php artisan key:generate
   - php artisan migrate
-  - pear install php_codesniffer
   - npm install npm@latest -g
   - npm install
   - npm run production
@@ -38,4 +37,3 @@ before_script:
 script:
   - vendor/bin/phpunit
   - php artisan dusk
-  - phpcs
