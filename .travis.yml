@@ -39,4 +39,4 @@ before_script:
 script:
   - vendor/bin/phpunit
   - php artisan dusk
-  - phpcs --standard=PSR12 /
+  - phpcs --standard=PSR12 app/ config/ database/ resources/ routes/ tests/
