@@ -28,7 +28,7 @@ install:
 before_script:
   - php artisan key:generate
   - php artisan migrate
-  - pear install pear/PHP_CodeSniffer
+  - pear install php_codesniffer
   - npm install npm@latest -g
   - npm install
   - npm run production
