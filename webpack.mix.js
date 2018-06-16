@@ -21,3 +21,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
         https: true,
         open: false
     });
+
+if (mix.inProduction()) {
+    mix.version();
+} else {
+    mix.sourceMaps();
+}
