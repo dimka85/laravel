@@ -22,8 +22,8 @@ before_install:
   - mysql -e 'CREATE DATABASE homestead;'
 
 install:
-  - cp .env.travis .env
   - travis_retry composer install --no-interaction --prefer-dist --no-suggest
+  - cp .env.travis .env
 
 before_script:
   - php artisan key:generate
