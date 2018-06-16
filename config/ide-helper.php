@@ -51,7 +51,7 @@ return array(
     'include_helpers' => env('IDE_HELPER_INCLUDE_HELPERS', false),
 
     'helper_files' => array(
-        base_path().'/vendor/laravel/framework/src/Illuminate/Support/helpers.php',
+        base_path() . '/vendor/laravel/framework/src/Illuminate/Support/helpers.php',
     ),
 
     /*
