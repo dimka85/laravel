@@ -10,6 +10,7 @@
         "doctrine/dbal": "^2.7",
         "encore/redis-manager": "^0.1.2",
         "fideloper/proxy": "^4.0",
+        "genealabs/laravel-model-caching": "^0.2.63",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.6.*",
         "laravel/horizon": "^1.2",

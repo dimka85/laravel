@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bdbfca5df6b32dc8e8e938ac12a632a",
+    "content-hash": "6bb52c70ef9f0c7ef45f8084036c96b5",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -897,6 +897,55 @@
             "time": "2018-03-08T01:11:30+00:00"
         },
         {
+            "name": "fico7489/laravel-pivot",
+            "version": "2.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fico7489/laravel-pivot.git",
+                "reference": "6c374f0c9d62891aafa75b70ed663943f326299a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fico7489/laravel-pivot/zipball/6c374f0c9d62891aafa75b70ed663943f326299a",
+                "reference": "6c374f0c9d62891aafa75b70ed663943f326299a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "5.6.*"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fico7489\\Laravel\\Pivot\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Horvat",
+                    "email": "filip.horvat@am2studio.hr",
+                    "homepage": "http://am2studio.hr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This package introduces new eloquent events for sync(), attach(), detach() or updateExistingPivot() methods on BelongsToMany relation.",
+            "homepage": "https://github.com/fico7489/laravel-pivot",
+            "keywords": [
+                "eloquent events",
+                "eloquent extra events",
+                "laravel BelongsToMany events",
+                "laravel pivot events",
+                "laravel sync events"
+            ],
+            "time": "2018-03-08T16:03:54+00:00"
+        },
+        {
             "name": "fideloper/proxy",
             "version": "4.0.0",
             "source": {
@@ -995,6 +1044,69 @@
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
             "time": "2017-06-27T22:17:23+00:00"
+        },
+        {
+            "name": "genealabs/laravel-model-caching",
+            "version": "0.2.63",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GeneaLabs/laravel-model-caching.git",
+                "reference": "a13c2dff5173af28786c9351edbf6c02a5431cac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GeneaLabs/laravel-model-caching/zipball/a13c2dff5173af28786c9351edbf6c02a5431cac",
+                "reference": "a13c2dff5173af28786c9351edbf6c02a5431cac",
+                "shasum": ""
+            },
+            "require": {
+                "fico7489/laravel-pivot": "*",
+                "illuminate/cache": "5.4 - 5.6",
+                "illuminate/config": "5.4 - 5.6",
+                "illuminate/console": "5.4 - 5.6",
+                "illuminate/database": "5.4 - 5.6",
+                "illuminate/support": "5.4 - 5.6",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "*",
+                "fzaninotto/faker": "*",
+                "mockery/mockery": "*",
+                "orchestra/database": "3.6.*",
+                "orchestra/testbench": "3.6.*",
+                "orchestra/testbench-browser-kit": "3.6.*",
+                "php-coveralls/php-coveralls": "*",
+                "phpmd/phpmd": "*",
+                "phpunit/phpunit": "7.*",
+                "predis/predis": "*",
+                "sebastian/phpcpd": "*",
+                "symfony/thanks": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GeneaLabs\\LaravelModelCaching\\Providers\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\LaravelModelCaching\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Bronner",
+                    "email": "hello@genealabs.com"
+                }
+            ],
+            "description": "Automatic caching for Eloquent models.",
+            "time": "2018-06-09T17:56:23+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
