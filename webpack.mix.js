@@ -12,18 +12,28 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
-    .browserSync({
-        proxy: {
-            target: "https://homestead.test",
-            ws: true
-        },
-        https: true,
-        open: false
-    });
+    .copyDirectory('resources/assets/img', 'public/img')
+    .sass('resources/assets/sass/app.scss', 'public/css');
 
 if (mix.inProduction()) {
     mix.version();
 } else {
     mix.sourceMaps();
+    mix.browserSync({
+        proxy: {
+            target: "https://homestead.test",
+            ws: true
+        },
+        host: '192.168.10.10',
+        port: 3000,
+        https: {
+            key: "/etc/nginx/ssl/homestead.test.key",
+            cert: "/etc/nginx/ssl/homestead.test.crt"
+        },
+        open: false,
+        watchOptions: {
+            usePolling: true,
+            interval: 500
+        }
+    });
 }
