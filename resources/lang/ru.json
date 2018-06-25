@@ -2,11 +2,11 @@
     "Login": "Вход",
     "Register": "Регистрация",
     "Logout": "Выход",
-    "E-Mail Address": "E-Mail Адрес",
+    "E-Mail address": "E-Mail адрес",
     "Password": "Пароль",
-    "Remember Me": "Запомнить Меня",
-    "Forgot Your Password?": "Забыли Ваш Пароль?",
+    "Remember me": "Запомнить меня",
+    "Forgot your password?": "Забыли ваш пароль?",
     "Name": "Имя",
-    "Confirm Password": "Подтвердить Пароль",
-    "Reset Password": "Сбросить Пароль"
+    "Confirm password": "Подтвердить пароль",
+    "Reset password": "Сбросить пароль"
 }
