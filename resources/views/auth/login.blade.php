@@ -27,10 +27,12 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password', __('Password'), ['class' => 'col-md-4 col-form-label text-md-right']) }}
+                            {{ Form::label('password', __('Password'), ['class' => 'col-md-4 col-form-label
+                            text-md-right']) }}
 
                             <div class="col-md-6">
-                                {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'required']) }}
+                                {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password')
+                                ? ' is-invalid' : ''), 'required']) }}
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -55,7 +57,8 @@
                             <div class="col-md-8 offset-md-4">
                                 {{ Form::submit(__('Login'), ['class' => 'btn btn-primary']) }}
 
-                                {{ Html::linkRoute('password.request', __('Forgot your password?'), [], ['class' => 'btn btn-link']) }}
+                                {{ Html::linkRoute('password.request', __('Forgot your password?'), [], ['class' =>
+                                'btn btn-link']) }}
                             </div>
                         </div>
 
