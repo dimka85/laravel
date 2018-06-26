@@ -59,15 +59,15 @@
                         </div>
 
                         <div class="form-group row">
-                            {{ Form::label('password-confirm', __('Confirm password'), ['class' => 'col-md-4
+                            {{ Form::label('password-confirmation', __('Confirm password'), ['class' => 'col-md-4
                             col-form-label text-md-right']) }}
 
                             <div class="col-md-6">
-                                {{ Form::password('password-confirm', ['class' => 'form-control', 'required']) }}
+                                {{ Form::password('password-confirmation', ['class' => 'form-control', 'required']) }}
 
-                                @if ($errors->has('password-confirm'))
+                                @if ($errors->has('password-confirmation'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password-confirm') }}</strong>
+                                        <strong>{{ $errors->first('password-confirmation') }}</strong>
                                     </span>
                                 @endif
                             </div>
