@@ -14,14 +14,15 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
+                    {{ Form::open(['route' => 'password.email']) }}
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-md-4 col-form-label
+                            text-md-right']) }}
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                {{ Form::email('email', old('email'), ['class' => 'form-control' . ($errors->has
+                                ('email') ? ' is-invalid' : ''), 'required', 'autofocus']) }}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -33,12 +34,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
+                                {{ Form::submit(__('Send Password Reset Link'), ['class' => 'btn btn-primary']) }}
                             </div>
                         </div>
-                    </form>
+
+                    {{ Form::close() }}
                 </div>
             </div>
         </div>
