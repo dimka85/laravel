@@ -12,7 +12,7 @@
 
     <!-- Scripts -->
     @section('scripts')
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/app.min.js') }}" defer></script>
     @show
 
     <!-- Fonts -->
@@ -21,7 +21,7 @@
 
     <!-- Styles -->
     @section('styles')
-        <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('css/app.min.css') }}" rel="stylesheet">
     @show
 </head>
 <body>
