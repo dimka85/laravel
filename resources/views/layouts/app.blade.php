@@ -12,7 +12,11 @@
 
     <!-- Scripts -->
     @section('scripts')
-        <script src="{{ mix('js/app.min.js') }}" defer></script>
+        @if (App::environment('production'))
+            <script src="{{ mix('js/app.js') }}" defer></script>
+        @else
+            <script src="{{ asset('js/app.min.js') }}" defer></script>
+        @endif
     @show
 
     <!-- Fonts -->
@@ -21,7 +25,11 @@
 
     <!-- Styles -->
     @section('styles')
-        <link href="{{ mix('css/app.min.css') }}" rel="stylesheet">
+        @if (App::environment('production'))
+            <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        @else
+            <link href="{{ asset('css/app.min.css') }}" rel="stylesheet">
+        @endif
     @show
 </head>
 <body>

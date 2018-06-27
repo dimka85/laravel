@@ -11,14 +11,26 @@
     <title>@yield('title', config('app.name'))</title>
 
     <!-- Scripts -->
-    <script src="{{ mix('js/app.min.js') }}" defer></script>
+    @section('scripts')
+        @if (App::environment('production'))
+            <script src="{{ mix('js/app.js') }}" defer></script>
+        @else
+            <script src="{{ asset('js/app.min.js') }}" defer></script>
+        @endif
+    @show
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.min.css') }}" rel="stylesheet">
+    @section('styles')
+        @if (App::environment('production'))
+            <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        @else
+            <link href="{{ asset('css/app.min.css') }}" rel="stylesheet">
+        @endif
+    @show
 </head>
 <body class="hold-transition sidebar-mini">
 <div id="app" class="wrapper">
