@@ -113,6 +113,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 0,
+            'read_write_timeout' => -1,
         ],
     
         'debugbar' => [
@@ -120,6 +121,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 1,
+            'read_write_timeout' => -1,
         ],
     
         'session' => [
@@ -127,6 +129,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 2,
+            'read_write_timeout' => -1,
         ],
     
         'cache' => [
@@ -134,6 +137,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 3,
+            'read_write_timeout' => -1,
         ],
     
         'queue' => [
@@ -141,6 +145,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 4,
+            'read_write_timeout' => -1,
         ],
     
         'horizon' => [
@@ -148,6 +153,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 5,
+            'read_write_timeout' => -1,
         ],
     
         'broadcast' => [
@@ -155,6 +161,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 6,
+            'read_write_timeout' => -1,
         ],
     
         'model-caching' => [
@@ -162,6 +169,7 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 7,
+            'read_write_timeout' => -1,
         ],
 
     ],
