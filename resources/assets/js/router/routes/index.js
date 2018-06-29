@@ -1,5 +1,7 @@
-export default routes = [
-    {
-    
-    }
-];
+const routes = [
+  {
+
+  }
+]
+
+export default routes
