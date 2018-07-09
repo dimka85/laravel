@@ -16,7 +16,8 @@
 
                             <div class="col-md-6">
                                 {{ Form::email('email', old('email'), ['class' => 'form-control' . ($errors->has
-                                ('email') ? ' is-invalid' : ''), 'required', 'autofocus']) }}
+                                ('email') ? ' is-invalid' : ''), 'placeholder' => __('Enter your E-Mail address'),
+                                'required', 'autofocus']) }}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -32,7 +33,7 @@
 
                             <div class="col-md-6">
                                 {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password')
-                                ? ' is-invalid' : ''), 'required']) }}
+                                ? ' is-invalid' : ''), 'placeholder' => __('Enter your password'), 'required']) }}
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -44,11 +45,13 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                <div class="checkbox custom-control custom-checkbox">
-                                    {{ Form::checkbox('remember', null, (old('remember') ? true : false),
-                                    ['class' => 'custom-control-input']) }}
+                                <div class="checkbox">
+                                    <div class="custom-control custom-checkbox">
+                                        {{ Form::checkbox('remember', null, (old('remember') ? true : false),
+                                        ['class' => 'custom-control-input']) }}
 
-                                    {{ Form::label('remember', __('Remember me'), ['class' => 'custom-control-label']) }}
+                                        {{ Form::label('remember', __('Remember me'), ['class' => 'custom-control-label']) }}
+                                    </div>
                                 </div>
                             </div>
                         </div>

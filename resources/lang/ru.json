@@ -12,6 +12,9 @@
     "Last name": "Фамилия",
     "Nickname": "Никнейм",
     "Avatar": "Аватар",
+    "Enter your E-Mail address": "Введите ваш E-Mail адрес",
+    "Enter your password": "Введите ваш пароль",
+    "I agree with terms": "Я согласен с условиями",
     "Confirm password": "Подтвердить пароль",
     "Reset password": "Сбросить пароль"
 }
