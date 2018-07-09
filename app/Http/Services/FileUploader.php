@@ -2,6 +2,8 @@
 
 namespace App\Http\Services;
 
+use Illuminate\Support\Facades\Storage;
+
 class FileUploader
 {
     public function uploadAvatar($user_id, $avatar)
