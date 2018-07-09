@@ -24,8 +24,8 @@
                                     <div class="input-group">
                                         {{ Form::email('email', old('email'), ['class' => 'form-control' .
                                         ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
-                                        __('Enter your E-Mail address'), 'min' => '3', 'max' => '255', 'required',
-                                        'autofocus']) }}
+                                        __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
+                                        'required', 'autofocus']) }}
 
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>

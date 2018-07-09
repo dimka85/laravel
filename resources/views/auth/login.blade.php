@@ -18,8 +18,8 @@
                                     <div class="input-group">
                                         {{ Form::email('email', old('email'), ['class' => 'form-control' .
                                         ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
-                                        __('Enter your E-Mail address'), 'min' => '3', 'max' => '255', 'required',
-                                        'autofocus']) }}
+                                        __('Enter your E-Mail address'), 'minlength' => '3', 'maxlength' => '255',
+                                        'required', 'autofocus']) }}
 
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
@@ -42,7 +42,8 @@
                                     <div class="input-group">
                                         {{ Form::password('password', ['class' => 'form-control' . ($errors->has
                                         ('password') ? ' is-invalid' : ''), 'placeholder' =>
-                                        __('Enter your password'), 'min' => '6', 'max' => '30', 'required']) }}
+                                        __('Enter your password'), 'minlength' => '6', 'maxlength' => '30',
+                                        'required']) }}
 
                                         <div class="input-group-append">
                                             <span class="input-group-text"><i class="fa fa-key"></i></span>
@@ -62,7 +63,7 @@
                                     <div class="checkbox">
                                         <div class="custom-control custom-checkbox">
                                             {{ Form::checkbox('remember', null, (old('remember') ? true : false),
-                                            ['class' => 'custom-control-input']) }}
+                                            ['class' => 'custom-control-input', 'id' => 'remember']) }}
 
                                             {{ Form::label('remember', __('Remember me'), ['class' => 'custom-control-label']) }}
                                         </div>
