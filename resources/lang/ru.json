@@ -8,7 +8,10 @@
     "Password": "Пароль",
     "Remember me": "Запомнить меня",
     "Forgot your password?": "Забыли ваш пароль?",
-    "Name": "Имя",
+    "First name": "Имя",
+    "Last name": "Фамилия",
+    "Nickname": "Никнейм",
+    "Avatar": "Аватар",
     "Confirm password": "Подтвердить пароль",
     "Reset password": "Сбросить пароль"
 }

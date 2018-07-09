@@ -11,16 +11,47 @@
                     {{ Form::open(['route' => 'register']) }}
 
                         <div class="form-group row">
-                            {{ Form::label('name', __('Name'), ['class' => 'col-md-4 col-form-label
+                            {{ Form::label('first_name', __('First name'), ['class' => 'col-md-4 col-form-label
                             text-md-right']) }}
 
                             <div class="col-md-6">
-                                {{ Form::text('name', old('name'), ['class' => 'form-control' . ($errors->has
-                                ('name') ? ' is-invalid' : ''), 'required', 'autofocus']) }}
+                                {{ Form::text('first_name', old('first_name'), ['class' => 'form-control' .
+                                ($errors->has('first_name') ? ' is-invalid' : ''), 'required', 'autofocus']) }}
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('first_name'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {{ Form::label('last_name', __('Last name'), ['class' => 'col-md-4 col-form-label
+                            text-md-right']) }}
+
+                            <div class="col-md-6">
+                                {{ Form::text('last_name', old('last_name'), ['class' => 'form-control' .
+                                ($errors->has('last_name') ? ' is-invalid' : ''), 'required']) }}
+
+                                @if ($errors->has('last_name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {{ Form::label('nickname', __('Nickname'), ['class' => 'col-md-4 col-form-label
+                            text-md-right']) }}
+
+                            <div class="col-md-6">
+                                {{ Form::text('nickname', old('nickname'), ['class' => 'form-control' . ($errors->has('nickname') ? ' is-invalid' : ''), 'required']) }}
+
+                                @if ($errors->has('nickname'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('nickname') }}</strong>
                                     </span>
                                 @endif
                             </div>

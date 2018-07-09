@@ -11,7 +11,7 @@
                     {{ Form::open(['route' => 'login']) }}
 
                         <div class="form-group row">
-                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-sm-4 col-form-label
+                            {{ Form::label('email', __('E-Mail address'), ['class' => 'col-md-4 col-form-label
                             text-md-right']) }}
 
                             <div class="col-md-6">
@@ -44,11 +44,11 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        {{ Form::checkbox('remember', null, (old('remember') ? true : false)) }} {{
-                                        __('Remember me') }}
-                                    </label>
+                                <div class="checkbox custom-control custom-checkbox">
+                                    {{ Form::checkbox('remember', null, (old('remember') ? true : false),
+                                    ['class' => 'custom-control-input']) }}
+
+                                    {{ Form::label('remember', __('Remember me'), ['class' => 'custom-control-label']) }}
                                 </div>
                             </div>
                         </div>
