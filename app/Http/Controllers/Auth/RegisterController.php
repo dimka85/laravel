@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -49,9 +52,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'first_name' => 'required|string|min:1|max:20',
+            'last_name' => 'required|string|min:1|max:30',
+            'nickname' => 'required|string|min:2|max:30|unique:users',
+            'email' => 'required|string|email|min:3|max:255|unique:users',
+            'password' => 'required|string|min:6|max:30|confirmed',
+            'password_confirmation' => 'required|string|min:6|max:30',
+            'avatar' => 'required|image|mimes:jpeg,png|max:2000',
+            'terms' => 'required|accepted',
         ]);
     }
 
@@ -64,9 +72,17 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'nickname' => $data['nickname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'avatar' => $this->uploadAvatar($data['avatar']),
         ]);
+    }
+    
+    protected function uploadAvatar($avatar)
+    {
+        return Storage::putFile('avatars', $avatar);
     }
 }
