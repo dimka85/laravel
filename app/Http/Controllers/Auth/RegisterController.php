@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -77,12 +76,24 @@ class RegisterController extends Controller
             'nickname' => $data['nickname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'avatar' => $this->uploadAvatar($data['avatar']),
         ]);
     }
     
-    protected function uploadAvatar($avatar)
+    /**
+     * The user has been registered /override/.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  mixed $user
+     * @return mixed
+     */
+    protected function registered(Request $request, User $user)
     {
-        return Storage::putFile('avatars', $avatar);
+        $user->avatar = $this->uploadAvatar($user->id, $request->avatar);
+        $user->save();
+    }
+    
+    protected function uploadAvatar($user_id, $avatar)
+    {
+        return Storage::putFile('avatars/' . $user_id, $avatar);
     }
 }
