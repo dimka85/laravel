@@ -18,7 +18,8 @@
 
                             <div class="col-md-6">
                                 {{ Form::email('email', ($email ?? old('email')), ['class' => 'form-control' .
-                                ($errors->has('email') ? ' is-invalid' : ''), 'required', 'autofocus']) }}
+                                ($errors->has('email') ? ' is-invalid' : ''), 'placeholder' =>
+                                __('Enter your E-Mail address'), 'required', 'autofocus']) }}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
@@ -34,7 +35,7 @@
 
                             <div class="col-md-6">
                                 {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password')
-                                ? ' is-invalid' : ''), 'required']) }}
+                                ? ' is-invalid' : ''), 'placeholder' => __('Enter your password'), 'required']) }}
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
@@ -49,7 +50,8 @@
                             col-form-label text-md-right']) }}
 
                             <div class="col-md-6">
-                                {{ Form::password('password-confirmation', ['class' => 'form-control', 'required']) }}
+                                {{ Form::password('password-confirmation', ['class' => 'form-control', 'placeholder'
+                                => __('Confirm your password'), 'required']) }}
 
                                 @if ($errors->has('password-confirmation'))
                                     <span class="invalid-feedback">

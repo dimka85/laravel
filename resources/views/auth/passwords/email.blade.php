@@ -22,7 +22,7 @@
 
                             <div class="col-md-6">
                                 {{ Form::email('email', old('email'), ['class' => 'form-control' . ($errors->has
-                                ('email') ? ' is-invalid' : ''), 'required', 'autofocus']) }}
+                                ('email') ? ' is-invalid' : ''), 'placeholder' => __('Enter your E-Mail address'), 'required', 'autofocus']) }}
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
