@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Services\FileUploader;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -31,15 +32,23 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
+    
+    /**
+     * FileUploader instance.
+     *
+     * @var \App\Http\Services\FileUploader
+     */
+    protected $uploader;
+    
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param \App\Http\Services\FileUploader $uploader
      */
-    public function __construct()
+    public function __construct(FileUploader $uploader)
     {
         $this->middleware('guest');
+        $this->uploader = $uploader;
     }
 
     /**
@@ -88,12 +97,7 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, User $user)
     {
-        $user->avatar = $this->uploadAvatar($user->id, $request->avatar);
+        $user->avatar = $this->uploader->uploadAvatar($user->id, $request->avatar);
         $user->save();
-    }
-    
-    protected function uploadAvatar($user_id, $avatar)
-    {
-        return Storage::putFile('avatars/' . $user_id, $avatar);
     }
 }
