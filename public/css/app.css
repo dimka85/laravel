@@ -4320,6 +4320,10 @@ input[type="button"].btn-block {
   content: "Browse";
 }
 
+.custom-file-input:lang(ru) ~ .custom-file-label::after {
+  content: "\41E\431\437\43E\440";
+}
+
 .custom-file-label {
   position: absolute;
   top: 0;
