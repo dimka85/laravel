@@ -1,6 +1,8 @@
 @extends('admin.layouts.admin')
 
-@section('title', __('Dashboard'))
+@section('title')
+    @parent - {{ __('Dashboard') }}
+@endsection
 
 @section('content')
     <div class="container-fluid">
