@@ -1,6 +1,9 @@
 {
+    "All rights reserved": "Все права защищены",
     "Home": "Домашняя",
     "Authorization": "Авторизация",
+    "Authorize": "Авторизоваться",
+    "Authorization Request": "Запрос авторизации",
     "Dashboard": "Админпанель",
     "Toggle navigation": "Переключение навигации",
     "Login": "Вход",
@@ -23,5 +26,8 @@
     "Confirm your password": "Подтвердите ваш пароль",
     "I agree with terms": "Я согласен с условиями",
     "Confirm password": "Подтвердить пароль",
-    "Reset password": "Сбросить пароль"
+    "Reset password": "Сбросить пароль",
+    "Cancel": "Отмена",
+    "This application will be able to": "Это приложение сможет",
+    "is requesting permission to access your account": "запрашивает разрешение на доступ к вашему аккаунту"
 }
