@@ -12,6 +12,8 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
+                        @include('includes.sessions')
+
                         {{ Form::open(['route' => 'register', 'files' => true]) }}
 
                             <div class="form-group row">

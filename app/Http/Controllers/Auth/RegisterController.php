@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Services\FileUploader;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\VerifyUser;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -78,13 +80,38 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'nickname' => $data['nickname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    
+        $user->avatar = $this->uploader->uploadAvatar($user->id, $data['avatar']);
+        $user->save();
+        
+        $user->verifyUser()->create(['token' => str_random(50)]);
+    
+        return $user;
+    }
+    
+    /**
+     * Handle a registration request for the application /override/.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        
+        event(new Registered($user = $this->create($request->all())));
+        
+        $this->guard()->login($user);
+        
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
     
     /**
@@ -94,9 +121,34 @@ class RegisterController extends Controller
      * @param  mixed $user
      * @return mixed
      */
-    protected function registered(Request $request, User $user)
+    protected function registered(Request $request, $user)
     {
-        $user->avatar = $this->uploader->uploadAvatar($user->id, $request->avatar);
-        $user->save();
+        $this->guard()->logout();
+        
+        return redirect()->route('login')
+            ->with('status', __('Activation code was sent to your E-Mail address.
+            Check your email and click on the link to verify.'));
+    }
+    
+    public function verify($token)
+    {
+        $verifyUser = VerifyUser::where('token', $token)->first();
+    
+        if (isset($verifyUser)) {
+            $user = $verifyUser->user;
+            
+            if (!$user->verified) {
+                $verifyUser->user->verified = true;
+                $verifyUser->user->save();
+                
+                $status = __('Your E-Mail is verified. You can now login.');
+            } else {
+                $status = __('Your E-Mail is already verified. You can login.');
+            }
+        } else {
+            return redirect()->route('login')->with('warning', __('Sorry your E-Mail cannot be identified.'));
+        }
+    
+        return redirect()->route('login')->with('status', $status);
     }
 }

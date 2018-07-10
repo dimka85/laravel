@@ -1,4 +1,7 @@
 {
+    "Whoops!": "Упс!",
+    "Hello!": "Здравствуйте!",
+    "Regards": "С уважением",
     "All rights reserved": "Все права защищены",
     "Home": "Домашняя",
     "Authorization": "Авторизация",
@@ -29,5 +32,14 @@
     "Reset password": "Сбросить пароль",
     "Cancel": "Отмена",
     "This application will be able to": "Это приложение сможет",
-    "is requesting permission to access your account": "запрашивает разрешение на доступ к вашему аккаунту"
+    "is requesting permission to access your account": "запрашивает разрешение на доступ к вашему аккаунту",
+    "Verify E-Mail": "Подтвердить E-Mail",
+    "Thanks": "Спасибо",
+    "Welcome to the site": "Добро пожаловать на сайт",
+    "Verify E-Mail clicking the button below": "Подтвердите E-Mail нажав на кнопку ниже",
+    "Activation code was sent to your E-Mail address. Check your email and click on the link to verify.": "Код активации был отправлен на ваш E-Mail адрес. Проверьте ваш E-Mail и нажмите ссылку для подтверждения.",
+    "Your E-Mail is verified. You can now login.": "Ваш E-Mail был подтверждён. Теперь вы можете авторизоваться.",
+    "Your E-Mail is already verified. You can login.": "Ваш E-Mail уже был подтверждён. Вы можете авторизоваться.",
+    "Sorry your E-Mail cannot be identified": "Извините, ваш E-Mail не может быть идентифицирован",
+    "You need to confirm your E-Mail. Activation code was already sent to your E-Mail address, please check it.": "Вам нужно подтвердить ваш E-Mail. Код активации уже был отправлен на ваш E-Mail адрес, пожалуйста проверьте."
 }

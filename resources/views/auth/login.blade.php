@@ -12,6 +12,8 @@
                     <div class="card-header">{{ __('Login') }}</div>
 
                     <div class="card-body">
+                        @include('includes.sessions')
+
                         {{ Form::open(['route' => 'login']) }}
 
                             <div class="form-group row">

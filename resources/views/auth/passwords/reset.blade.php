@@ -12,6 +12,8 @@
                     <div class="card-header">{{ __('Reset Password') }}</div>
 
                     <div class="card-body">
+                        @include('includes.sessions')
+
                         {{ Form::open(['route' => 'password.request']) }}
 
                             {{ Form::hidden('token', $token) }}

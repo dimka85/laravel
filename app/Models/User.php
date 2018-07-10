@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\VerifyUser;
+use App\Notifications\UserRegisteredNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -36,6 +38,16 @@ use Laravel\Passport\HasApiTokens;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\User withoutTrashed()
  * @mixin \Eloquent
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $nickname
+ * @property string|null $avatar
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|
+ * \Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereAvatar($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereNickname($value)
  */
 class User extends Authenticatable
 {
@@ -65,4 +77,24 @@ class User extends Authenticatable
      * @var array
      */
     protected $dates = ['deleted_at'];
+    
+    /**
+     * User has one VerifyUser relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function verifyUser()
+    {
+        return $this->hasOne(VerifyUser::class);
+    }
+    
+    /**
+     * Send UserRegisteredNotification E-Mail.
+     *
+     * @return void
+     */
+    public function sendUserRegisteredNotification()
+    {
+        $this->notify(new UserRegisteredNotification($this));
+    }
 }
