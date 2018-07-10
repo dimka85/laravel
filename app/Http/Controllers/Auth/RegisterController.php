@@ -91,7 +91,7 @@ class RegisterController extends Controller
         $user->avatar = $this->uploader->uploadAvatar($user->id, $data['avatar']);
         $user->save();
         
-        $user->verifyUser()->create(['token' => str_random(50)]);
+        $user->verifyUser()->create(['verification_token' => str_random(50)]);
     
         return $user;
     }
@@ -126,13 +126,12 @@ class RegisterController extends Controller
         $this->guard()->logout();
         
         return redirect()->route('login')
-            ->with('status', __('Activation code was sent to your E-Mail address.
-            Check your email and click on the link to verify.'));
+            ->with('status', __('Activation code was sent to your E-Mail address. Check it to verify.'));
     }
     
     public function verify($token)
     {
-        $verifyUser = VerifyUser::where('token', $token)->first();
+        $verifyUser = VerifyUser::where('verification_token', $token)->first();
     
         if (isset($verifyUser)) {
             $user = $verifyUser->user;

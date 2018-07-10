@@ -74,7 +74,7 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['default', 'verify_email'],
                 'balance' => 'simple',
                 'processes' => 10,
                 'tries' => 3,
@@ -84,7 +84,7 @@ return [
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default'],
+                'queue' => ['default', 'verify_email'],
                 'balance' => env('HORIZON_LOCAL_BALANCE', 'simple'),
                 'processes' => env('HORIZON_LOCAL_PROCESSES', 3),
                 'tries' => 3,

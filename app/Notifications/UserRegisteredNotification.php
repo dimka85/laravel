@@ -48,7 +48,7 @@ class UserRegisteredNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        $url = route('verify', ['token' => $this->user->verifyUser()->verification_token]);
+        $url = route('verify', ['token' => $this->user->verifyUser->verification_token]);
         
         return (new MailMessage)
             ->subject(__('Verify E-Mail'))

@@ -37,9 +37,9 @@
     "Thanks": "Спасибо",
     "Welcome to the site": "Добро пожаловать на сайт",
     "Verify E-Mail clicking the button below": "Подтвердите E-Mail нажав на кнопку ниже",
-    "Activation code was sent to your E-Mail address. Check your email and click on the link to verify.": "Код активации был отправлен на ваш E-Mail адрес. Проверьте ваш E-Mail и нажмите ссылку для подтверждения.",
+    "Activation code was sent to your E-Mail address. Check it to verify.": "Код активации был отправлен на ваш E-Mail адрес. Проверьте его для подтверждения.",
     "Your E-Mail is verified. You can now login.": "Ваш E-Mail был подтверждён. Теперь вы можете авторизоваться.",
     "Your E-Mail is already verified. You can login.": "Ваш E-Mail уже был подтверждён. Вы можете авторизоваться.",
     "Sorry your E-Mail cannot be identified": "Извините, ваш E-Mail не может быть идентифицирован",
-    "You need to confirm your E-Mail. Activation code was already sent to your E-Mail address, please check it.": "Вам нужно подтвердить ваш E-Mail. Код активации уже был отправлен на ваш E-Mail адрес, пожалуйста проверьте."
+    "You need to confirm your E-Mail. Activation code was already sent to your E-Mail address.": "Вам нужно подтвердить ваш E-Mail. Код активации уже был отправлен на ваш E-Mail адрес."
 }

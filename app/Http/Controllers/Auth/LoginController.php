@@ -50,8 +50,10 @@ class LoginController extends Controller
         if (!$user->verified) {
             auth()->logout();
             
-            return back()->with('warning', __('You need to confirm your E-Mail.
-            Activation code was already sent to your E-Mail address, please check it.'));
+            return back()->with(
+                'warning',
+                __('You need to confirm your E-Mail. Activation code was already sent to your E-Mail address.')
+            );
         }
         
         return redirect()->intended($this->redirectPath());

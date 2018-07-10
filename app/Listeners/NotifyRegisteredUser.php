@@ -27,6 +27,6 @@ class NotifyRegisteredUser
      */
     public function handle(Registered $event)
     {
-        dispatch(new SendVerificationEmail($event->user));
+        SendVerificationEmail::dispatch($event->user)->onQueue('verify_email')->delay(now()->addSeconds(10));
     }
 }
