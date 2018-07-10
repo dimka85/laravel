@@ -13,8 +13,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background: #fff url('img/game/mafia_logo.jpg') 0 0/100% 100% no-repeat;
+                color: #000;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -46,17 +46,24 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 100px;
+                text-shadow: 5px 5px 5px #fff;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #fff;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 600;
-                letter-spacing: .1rem;
+                letter-spacing: .2rem;
                 text-decoration: none;
                 text-transform: uppercase;
+            }
+
+            .content a {
+                color: #ff0010;
+                font-size: 24px;
+                text-shadow: 3px 3px 3px #fff;
             }
 
             .m-b-md {
@@ -79,15 +86,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name') }}
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    {{ Html::linkRoute('about', __('About game')) }}
+                    {{ Html::linkRoute('rules', __('Game rules')) }}
+                    {{ Html::linkRoute('roles', __('Game roles')) }}
                 </div>
             </div>
         </div>

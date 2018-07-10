@@ -15,6 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('info')->group(function () {
+    Route::get('/about', function () {
+        return 'Test';
+    })->name('about');
+    
+    Route::get('/rules', function () {
+        return 'Test';
+    })->name('rules');
+    
+    Route::get('/roles', function () {
+        return 'Test';
+    })->name('roles');
+});
+
 Auth::routes();
 
 Route::get('/auth/verify/{token}', 'Auth\RegisterController@verify')->name('verify');
