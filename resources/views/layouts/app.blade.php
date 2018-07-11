@@ -59,9 +59,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name') }}
-                </a>
+                {{ Html::linkRoute('home', config('app.name'), null, ['class' => 'navbar-brand']) }}
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -79,24 +78,23 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                {{ Html::linkRoute('login', __('Login'), null, ['class' => 'nav-link']) }}
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                {{ Html::linkRoute('register', __('Register'), null, ['class' => 'nav-link']) }}
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <span
-                                        class="caret"></span>
-                                </a>
+                                {!! Html::linkWithHtml('#', Auth::user()->first_name . ' ' . Auth::user()->last_name . ' <span class="caret"></span>', ['class' => 'nav-link dropdown-toggle', 'id' => 'navbarDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'v-pre']) !!}
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                       document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                    {{ Html::linkRoute('admin.user.profile', __('My profile'), ['user' =>
+                                    Auth::user()], ['class' => 'dropdown-item']) }}
+                                    {{ Html::linkRoute('admin.user.statistics', __('My statistics'), ['user' =>
+                                    Auth::user()], ['class' => 'dropdown-item']) }}
+                                    {{ Html::linkRoute('logout', __('Logout'), null, ['class' =>
+                                    'dropdown-item', 'onclick' => 'event.preventDefault();
+                                    document.getElementById("logout-form").submit();']) }}
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
