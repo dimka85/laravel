@@ -15,8 +15,9 @@
                         @include('includes.sessions')
 
                         <div class="list-group text-center font-weight-bold">
-                            {{ Html::linkRoute('game.start', __('Start the game'), null, ['class' => 'list-group-item
-                            list-group-item-action bg-success']) }}
+                            {{ Html::linkRoute('game.start', __('Create new game'), null, ['class' => 'list-group-item list-group-item-action bg-success']) }}
+                            {{ Html::linkRoute('game.search', __('Find the game'), null, ['class' => 'list-group-item
+                            list-group-item-action bg-secondary']) }}
                             {{ Html::linkRoute('game.settings', __('Game settings'), null, ['class' => 'list-group-item list-group-item-action bg-primary']) }}
                             {{ Html::linkRoute('game.statistics', __('Game statistics'), null, ['class' =>
                             'list-group-item list-group-item-action bg-info']) }}

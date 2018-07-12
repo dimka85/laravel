@@ -1,8 +1,12 @@
-const Example = { template: '<div>Test</div>' }
+import ChooseGameType from '../../components/ChooseGameType.vue'
+import GameTypeSettings from '../../components/GameTypeSettings.vue'
 
 const routes = [
   {
-    path: '/', component: Example
+    path: '/game/start', component: ChooseGameType
+  },
+  {
+    path: '/game/start/:id', component: GameTypeSettings
   }
 ]
 

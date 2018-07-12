@@ -85,7 +85,8 @@
                             </li>
                         @else
                             <li class="nav-item dropdown">
-                                {!! Html::linkWithHtml('#', Auth::user()->first_name . ' ' . Auth::user()->last_name . ' <span class="caret"></span>', ['class' => 'nav-link dropdown-toggle', 'id' => 'navbarDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'v-pre']) !!}
+                                {!! Html::linkWithHtml('#', Auth::user()->first_name . ' ' .
+                                Auth::user()->last_name . ' <span class="caret"></span>', ['class' => 'nav-link dropdown-toggle', 'id' => 'navbarDropdown', 'role' => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'false', 'v-pre']) !!}
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     {{ Html::linkRoute('admin.user.profile', __('My profile'), ['user' =>
