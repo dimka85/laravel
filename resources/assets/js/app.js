@@ -26,6 +26,10 @@ Vue.component(
   require('./components/GameTypeSettings.vue'))
 
 Vue.component(
+  'search-game',
+  require('./components/SearchGame.vue'))
+
+Vue.component(
   'passport-clients',
   require('./components/passport/Clients.vue')
 )

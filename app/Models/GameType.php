@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use GeneaLabs\LaravelModelCaching\CachedModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -28,8 +28,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static bool|null restore()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\GameType withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\GameType withoutTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel disableCache()
+ * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
  */
-class GameType extends Model
+class GameType extends CachedModel
 {
     use SoftDeletes;
     
@@ -57,4 +59,12 @@ class GameType extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+    
+    /**
+     * Get the games for the game type.
+     */
+    public function games()
+    {
+        return $this->hasMany(Game::class);
+    }
 }

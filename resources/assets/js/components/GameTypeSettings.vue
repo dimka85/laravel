@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>Классическая мафия</h1>
         <div>
             <label for="game_type_settings_players">Выберите количество игроков:</label>
             <select id="game_type_settings_players" class="custom-select">
@@ -19,15 +18,15 @@
     
         <div class="mt-1">Выберите допустимые игровые роли:</div>
         <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Дон</label>
+            <input type="checkbox" class="custom-control-input" id="role1">
+            <label class="custom-control-label" for="role1">Дон</label>
         </div>
         <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck2">
-            <label class="custom-control-label" for="customCheck2">Шериф</label>
+            <input type="checkbox" class="custom-control-input" id="role2">
+            <label class="custom-control-label" for="role2">Шериф</label>
         </div>
-    
-        <a class="btn btn-primary btn-block mt-1" href="#" role="button">Создать новую игру</a>
+
+        <button type="submit" class="btn btn-primary btn-block mt-1">Создать новую игру</button>
     </div>
 </template>
 

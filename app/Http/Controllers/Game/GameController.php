@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Game;
 
-use App\Models\GameType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -25,7 +24,17 @@ class GameController extends Controller
      */
     public function start()
     {
-        return view('game.start', ['game_types' => GameType::pluck('game_type')]);
+        return view('game.start');
+    }
+    
+    /**
+     * Create new game.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
     
     /**

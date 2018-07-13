@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\User;
 use GeneaLabs\LaravelModelCaching\CachedModel;
 
 /**

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\VerifyUser;
 use App\Notifications\UserRegisteredNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -52,6 +51,7 @@ use Laravel\Passport\HasApiTokens;
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read \App\Models\VerifyUser $verifyUser
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereVerified($value)
+ * @property-read \App\Models\Searchgame $searchgame
  */
 class User extends Authenticatable
 {
@@ -90,6 +90,16 @@ class User extends Authenticatable
     public function verifyUser()
     {
         return $this->hasOne(VerifyUser::class);
+    }
+    
+    /**
+     * User has one Searchgame relation.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function searchgame()
+    {
+        return $this->hasOne(Searchgame::class);
     }
     
     /**

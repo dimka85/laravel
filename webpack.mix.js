@@ -31,6 +31,7 @@ if (mix.inProduction()) {
       cert: '/etc/nginx/ssl/homestead.test.crt'
     },
     open: false,
+    watchEvents: ['change', 'add', 'unlink', 'addDir', 'unlinkDir'],
     watchOptions: {
       usePolling: true,
       interval: 500

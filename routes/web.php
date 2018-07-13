@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('game')->group(function () {
             Route::name('game.')->group(function () {
                 Route::get('/start', 'GameController@start')->name('start');
+                Route::post('/create', 'GameController@crete')->name('create');
                 Route::get('/search', 'GameSearchController@index')->name('search');
                 Route::get('/settings', 'GameController@settings')->name('settings');
                 Route::get('/statistics', 'GameController@statistics')->name('statistics');

@@ -15,6 +15,8 @@ class GameTypesTableSeeder extends Seeder
             'game_type' => 'Классическая мафия',
             'min' => 10,
             'max' => 10,
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }
