@@ -1,5 +1,7 @@
 import router from './router'
 import store from './store'
+import VueChatScroll from 'vue-chat-scroll'
+import VueTimeago from 'vue-timeago'
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -10,6 +12,8 @@ import store from './store'
 require('./bootstrap')
 
 window.Vue = require('vue')
+
+Vue.use(VueChatScroll)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -43,6 +47,21 @@ Vue.component(
   'passport-personal-access-tokens',
   require('./components/passport/PersonalAccessTokens.vue')
 )
+
+Vue.component('chat-room', require('./components/laravel-video-chat/ChatRoom.vue'))
+Vue.component('group-chat-room', require('./components/laravel-video-chat/GroupChatRoom.vue'))
+Vue.component('video-section', require('./components/laravel-video-chat/VideoSection.vue'))
+Vue.component('file-preview', require('./components/laravel-video-chat/FilePreview.vue'))
+
+Vue.use(VueTimeago, {
+  name: 'timeago', // component name, `timeago` by default
+  locale: 'en-US',
+  locales: {
+    'en-US': ['сейчас', ['%s сукунду назад', '%s секунд назад'], ['%s минуту назад', '%s минут назад'],
+      ['%s час назад', '%s часов назад'], ['%s день назад', '%s дней назад'], ['%s неделю назад',
+        '%s недель назад'], ['%s месяц назад', '%s месяцев назад'], ['%s год назад', '%s лет назад']]
+  }
+})
 
 const app = new Vue({
   el: '#app',

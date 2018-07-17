@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c445ea51edb31070fc689f3f0137304",
+    "content-hash": "e36faa1a942dc27773111c5bcec3fd22",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -176,6 +176,61 @@
                 "symmetric key cryptography"
             ],
             "time": "2018-04-23T19:33:40+00:00"
+        },
+        {
+            "name": "dflydev/apache-mime-types",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dflydev/dflydev-apache-mime-types.git",
+                "reference": "f30a57e59b7476e4c5270b6a0727d79c9c0eb861"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dflydev/dflydev-apache-mime-types/zipball/f30a57e59b7476e4c5270b6a0727d79c9c0eb861",
+                "reference": "f30a57e59b7476e4c5270b6a0727d79c9c0eb861",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "twig/twig": "1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Dflydev\\ApacheMimeTypes": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dragonfly Development Inc.",
+                    "email": "info@dflydev.com",
+                    "homepage": "http://dflydev.com"
+                },
+                {
+                    "name": "Beau Simensen",
+                    "email": "beau@dflydev.com",
+                    "homepage": "http://beausimensen.com"
+                }
+            ],
+            "description": "Apache MIME Types",
+            "keywords": [
+                "apache",
+                "mime",
+                "mimetypes"
+            ],
+            "time": "2013-05-14T02:02:01+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2465,6 +2520,72 @@
                 "random"
             ],
             "time": "2018-07-04T16:31:37+00:00"
+        },
+        {
+            "name": "php-junior/laravel-video-chat",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPJunior/laravel-video-chat.git",
+                "reference": "39fd18fdcc6a7247d05645165fe04c755819e5f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPJunior/laravel-video-chat/zipball/39fd18fdcc6a7247d05645165fe04c755819e5f6",
+                "reference": "39fd18fdcc6a7247d05645165fe04c755819e5f6",
+                "shasum": ""
+            },
+            "require": {
+                "dflydev/apache-mime-types": "^1.0",
+                "illuminate/contracts": "^5.5",
+                "illuminate/database": "^5.5",
+                "illuminate/support": "^5.5",
+                "php": ">=7.0",
+                "predis/predis": "^1.1"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "^4.0",
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "PhpJunior\\LaravelVideoChat\\LaravelVideoChatServiceProvider"
+                    ],
+                    "aliases": {
+                        "Chat": "PhpJunior\\LaravelVideoChat\\Facades\\Chat"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpJunior\\LaravelVideoChat\\": "src/"
+                },
+                "files": [
+                    "helper/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nyi Nyi Lwin",
+                    "email": "nyinyilwin1992@hotmail.com"
+                }
+            ],
+            "description": "Laravel Video Chat using Socket.IO and WebRTC",
+            "keywords": [
+                "Socket.io",
+                "WebRTC",
+                "chat",
+                "laravel",
+                "realtime",
+                "video-chat"
+            ],
+            "time": "2017-12-02T15:50:31+00:00"
         },
         {
             "name": "phpseclib/phpseclib",

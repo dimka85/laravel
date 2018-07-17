@@ -29,5 +29,39 @@
                 </div>
             </div>
         </div>
+
+        @php $groups = Chat::getAllGroupConversations();$conversations = Chat::getAllConversations();@endphp
+        <ul class="list-group">
+            @foreach($conversations as $conversation)
+                <li class="list-group-item">
+                    @if($conversation->message->conversation->is_accepted)
+                        <a href="#">
+                            <h2>{{$conversation->user->nickname}}</h2>
+                            @if(!is_null($conversation->message))
+                                <span>{{ substr($conversation->message->text, 0, 20)}}</span>
+                            @endif
+                        </a>
+                    @else
+                        <a href="#">
+                            <h2>{{$conversation->user->nickname}}</h2>
+                            @if($conversation->message->conversation->second_user_id == auth()->user()->id)
+                                <a href="accept_request_route" class="btn btn-xs btn-success">
+                                    Accept Message Request
+                                </a>
+                            @endif
+                        </a>
+                    @endif
+                </li>
+            @endforeach
+
+            @foreach($groups as $group)
+                <li class="list-group-item">
+                    <a href="#">
+                        <h2>{{$group->name}}</h2>
+                        <span>{{ $group->users_count }} Member</span>
+                    </a>
+                </li>
+            @endforeach
+        </ul>
     </div>
 @endsection

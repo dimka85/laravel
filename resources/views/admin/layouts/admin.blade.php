@@ -19,6 +19,8 @@
         @if (App::environment('production'))
             <script src="{{ mix('js/app.js') }}" defer></script>
         @else
+            <script src="{{ asset('/js/manifest.js') }}" defer></script>
+            <script src="{{ asset('/js/vendor.js') }}" defer></script>
             <script src="{{ asset('js/app.js') }}" defer></script>
         @endif
     @show
@@ -51,7 +53,7 @@
         @if (App::environment('production'))
             <link href="{{ mix('css/app.css') }}" rel="stylesheet">
         @else
-            <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/app.min.css') }}" rel="stylesheet">
         @endif
     @show
 </head>

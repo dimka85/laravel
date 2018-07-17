@@ -1,4 +1,7 @@
 {
+    "New game": "Новая игра",
+    "You can not start a new game until you leave the current one": "Вы не можете начать новую игру пока не покинете текущую",
+    "There was an error creating the game": "Во время создании игры произошла ошибка",
     "Click to choose game type": "Нажмите чтобы выбрать тип игры",
     "Choose game type": "Выберите тип игры",
     "Create new game": "Создать новую игру",

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Game;
 
+use App\Models\GameType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,11 +31,34 @@ class GameController extends Controller
     /**
      * Create new game.
      *
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        // fixme Create Request class!!!
+        $gameType = GameType::find($request->game_type);
+    
+        if (isset($gameType)) {
+            $game = $gameType->game()->create([
+                'game_name' => $request->game_name,
+                'game_players' => $request->game_players,
+                'game_mafia' => $request->game_mafia,
+                'with_don' => $request->don,
+                'with_sheriff' => $request->sheriff,
+            ]);
+            
+            if (isset($game)) {
+                $request->user()->searchgame()->create([
+                    'game_id' => $game->id,
+                    'is_host' => true,
+                ]);
+    
+                return view('game.new', ['game' => $game->with('searchgames')]);
+            }
+        }
+    
+        return redirect()->route('game.start')->with('error', __('There was an error creating the game'));
     }
     
     /**

@@ -18,6 +18,12 @@ class CreateGamesTable extends Migration
             $table->string('game_name', 30);
             $table->unsignedInteger('game_type_id');
             $table->foreign('game_type_id')->references('id')->on('game_types');
+            $table->tinyInteger('game_players');
+            $table->tinyInteger('game_mafia');
+            $table->boolean('with_don')->default(false);
+            $table->boolean('with_sheriff')->default(false);
+            $table->boolean('with_doctor')->default(false);
+            $table->boolean('with_putana')->default(false);
             $table->timestamps();
         });
     }

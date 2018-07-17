@@ -19,6 +19,8 @@
         @if (App::environment('production'))
             <script src="{{ mix('js/app.js') }}" defer></script>
         @else
+            <script src="{{ asset('/js/manifest.js') }}" defer></script>
+            <script src="{{ asset('/js/vendor.js') }}" defer></script>
             <script src="{{ asset('js/app.js') }}" defer></script>
         @endif
     @show

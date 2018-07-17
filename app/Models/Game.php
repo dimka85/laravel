@@ -11,6 +11,7 @@ use GeneaLabs\LaravelModelCaching\CachedModel;
  * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel disableCache()
  * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
  * @mixin \Eloquent
+ * @property-read \App\Models\GameType $gameType
  */
 class Game extends CachedModel
 {
@@ -20,7 +21,7 @@ class Game extends CachedModel
      * @var array
      */
     protected $fillable = [
-        'game_name',
+        'game_name', 'game_players', 'game_mafia', 'with_don', 'with_sheriff', 'with_doctor', 'with_putana',
     ];
     
     /**

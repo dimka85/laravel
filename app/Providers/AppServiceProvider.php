@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\User;
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Html;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
                     $text .= ' ' . $value;
                 }
             }
+            
             return '<a href="' . $url . '"' . $text . '>' . $html . '</a>';
         });
     }
@@ -43,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->app->environment() !== 'production') {
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            $this->app->register(IdeHelperServiceProvider::class);
         }
     }
 }

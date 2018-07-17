@@ -19,6 +19,7 @@ class CreateSearchgamesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedInteger('game_id');
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
+            $table->boolean('is_host')->default(false);
             $table->timestamps();
         });
     }

@@ -44,6 +44,9 @@ if (token) {
  * allows your team to easily build robust real-time web applications.
  */
 
+require('webrtc-adapter')
+window.Cookies = require('js-cookie')
+
 import Echo from 'laravel-echo'
 
 window.io = require('socket.io-client')

@@ -18,23 +18,37 @@ mix.js('resources/assets/js/app.js', 'public/js')
 if (mix.inProduction()) {
   mix.version()
 } else {
-  mix.sourceMaps()
-  mix.browserSync({
-    proxy: {
-      target: 'https://homestead.test',
-      ws: true
-    },
-    host: '192.168.10.10',
-    port: 3000,
-    https: {
-      key: '/etc/nginx/ssl/homestead.test.key',
-      cert: '/etc/nginx/ssl/homestead.test.crt'
-    },
-    open: false,
-    watchEvents: ['change', 'add', 'unlink', 'addDir', 'unlinkDir'],
-    watchOptions: {
-      usePolling: true,
-      interval: 500
-    }
-  })
+  mix.extract(['bootstrap', 'popper.js', 'vue', 'jquery'])
+    .sourceMaps()
+    .browserSync({
+      proxy: {
+        target: 'https://homestead.test',
+        ws: true
+      },
+      host: '192.168.10.10',
+      port: 3000,
+      https: {
+        key: '/etc/nginx/ssl/homestead.test.key',
+        cert: '/etc/nginx/ssl/homestead.test.crt'
+      },
+      open: false,
+      ghostMode: false,
+      reloadDelay: 1000,
+      files: [
+        'app/**/*.php',
+        'routes/**/*.php',
+        'resources/lang/ru.json',
+        'resources/lang/**/*.php',
+        'resources/views/**/*.php',
+        'resources/assets/**/*.js',
+        'resources/assets/js/**/*.vue',
+        'public/js/**/*.js',
+        'public/css/**/*.css'
+      ],
+      watchEvents: ['change', 'add', 'unlink', 'addDir', 'unlinkDir'],
+      watchOptions: {
+        usePolling: true,
+        interval: 500
+      }
+    })
 }
