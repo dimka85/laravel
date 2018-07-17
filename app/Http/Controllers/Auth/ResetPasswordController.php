@@ -36,4 +36,20 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+    
+    /**
+     * Get the password reset validation rules /override/.
+     *
+     * @return array
+     */
+    protected function rules()
+    {
+        return [
+            'token' => 'required|string',
+            'email' => 'required|string|email|min:3|max:255',
+            'password' => 'required|string|min:6|max:30|confirmed',
+            'password_confirmation' => 'required|string|min:6|max:30',
+        ];
+    }
+    
 }
