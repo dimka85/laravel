@@ -18,16 +18,16 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
+    
     use AuthenticatesUsers;
-
+    
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = '/home';
-
+    
     /**
      * Create a new controller instance.
      *
@@ -41,8 +41,8 @@ class LoginController extends Controller
     /**
      * The user has been authenticated /override/.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  mixed $user
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
      * @return mixed
      */
     protected function authenticated(Request $request, $user)

@@ -24,9 +24,9 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+    
     use RegistersUsers;
-
+    
     /**
      * Where to redirect users after registration.
      *
@@ -44,18 +44,18 @@ class RegisterController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param  \App\Http\Services\FileUploader  $uploader
+     * @param  \App\Http\Services\FileUploader $uploader
      */
     public function __construct(FileUploader $uploader)
     {
         $this->middleware('guest');
         $this->uploader = $uploader;
     }
-
+    
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -71,11 +71,11 @@ class RegisterController extends Controller
             'terms' => 'required|accepted',
         ]);
     }
-
+    
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\Models\User
      */
     protected function create(array $data)
@@ -87,19 +87,19 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-    
+        
         $user->avatar = $this->uploader->uploadAvatar($user->id, $data['avatar']);
         $user->save();
-    
+        
         $this->createVerificationToken($user);
-    
+        
         return $user;
     }
     
     /**
      * Handle a registration request for the application /override/.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function register(Request $request)
@@ -117,8 +117,8 @@ class RegisterController extends Controller
     /**
      * The user has been registered /override/.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
+     * @param  \Illuminate\Http\Request $request
+     * @param  mixed $user
      * @return mixed
      */
     protected function registered(Request $request, $user)
@@ -132,13 +132,13 @@ class RegisterController extends Controller
     /**
      * Verify user E-Mail.
      *
-     * @param  string  $token
+     * @param  string $token
      * @return \Illuminate\Http\RedirectResponse
      */
     public function verify($token)
     {
         $verifyUser = VerifyUser::where('verification_token', $token)->first();
-    
+        
         if (isset($verifyUser)) {
             $user = $verifyUser->user;
             
@@ -156,14 +156,14 @@ class RegisterController extends Controller
                 __('Sorry your E-Mail cannot be identified.')
             );
         }
-    
+        
         return redirect()->route('login')->with('status', $status);
     }
     
     /**
      * Create verification token for registered user.
      *
-     * @param  User  $user
+     * @param  User $user
      * @return void
      */
     protected function createVerificationToken($user)

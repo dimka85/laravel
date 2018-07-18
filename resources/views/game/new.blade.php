@@ -14,8 +14,8 @@
                     <div class="card-body">
                         @include('includes.sessions')
 
-                        @php $conversation = Chat::getConversationMessageById(1); @endphp
-                        <chat-room :conversation="{{ $conversation }}" :current-user="{{ auth()->user() }}"></chat-room>
+                        <group-chat-room :conversation="{{ $conversation }}"
+                                         :current-user="{{ auth()->user() }}"></group-chat-room>
                     </div>
                 </div>
             </div>

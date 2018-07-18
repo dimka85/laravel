@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Game;
 
 use App\Models\Game;
+use Chat;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use PhpJunior\LaravelVideoChat\Models\Group\Conversation\GroupConversation;
 
 class GameSearchController extends Controller
 {
@@ -31,13 +33,14 @@ class GameSearchController extends Controller
     /**
      * Show the application new game page.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Game  $game
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\Game $game
      * @return \Illuminate\View\View
      */
     public function new(Request $request, Game $game)
     {
         $searchgame = $request->user()->searchgame;
+        $groupConversationId = GroupConversation::where('name', $game->game_name)->value('id');
         
         if (isset($searchgame)) {
             $searchgameGame = $searchgame->game;
@@ -53,8 +56,13 @@ class GameSearchController extends Controller
                 'game_id' => $game->id,
                 'is_host' => false,
             ]);
+            
+            Chat::addMembersToExistingGroupConversation($groupConversationId, [$request->user()->id]);
         }
         
-        return view('game.new', ['game' => $game->with('searchgames')]);
+        return view('game.new', [
+            'game' => $game->with('searchgames'),
+            'conversation' => Chat::getGroupConversationMessageById($groupConversationId)
+        ]);
     }
 }

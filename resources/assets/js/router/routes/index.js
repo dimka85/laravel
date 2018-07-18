@@ -1,7 +1,7 @@
 import ChooseGameType from '../../components/ChooseGameType.vue'
 import GameTypeSettings from '../../components/GameTypeSettings.vue'
 import SearchGame from '../../components/SearchGame.vue'
-import ChatRoom from '../../components/laravel-video-chat/ChatRoom.vue'
+import GroupChatRoom from '../../components/laravel-video-chat/GroupChatRoom.vue'
 
 const routes = [
   {
@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/game/new',
-    component: ChatRoom
+    component: GroupChatRoom
   }
 ]
 

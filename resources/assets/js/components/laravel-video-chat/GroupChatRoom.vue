@@ -16,7 +16,7 @@
                         <ul class="chat" v-chat-scroll>
                             <li class="clearfix" v-for="message in messages" v-bind:class="{ 'right': check(message.sender.id), 'left': !check(message.sender.id) }">
                             <span class="chat-img" v-bind:class="{ 'float-right' : check(message.sender.id) , 'float-left' : !check(message.sender.id) }">
-                                <img :src="'http://placehold.it/50/FA6F57/fff&text='+ message.sender.name" alt="Аватар пользователя" class="rounded-circle" width="40" height="40" />
+                                <img :src="'//homestead.test/storage/' + message.sender.avatar" alt="Аватар пользователя" class="rounded-circle" width="40" height="40" />
                             </span>
                                 <div class="chat-body clearfix">
                                     <div class="header">

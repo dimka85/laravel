@@ -14,7 +14,9 @@
                     <div class="card-body">
                         @include('includes.sessions')
 
-                        <router-view></router-view>
+                        {{ Form::open(['route' => 'game.create']) }}
+                            <router-view></router-view>
+                        {{ Form::close() }}
                     </div>
                 </div>
             </div>
