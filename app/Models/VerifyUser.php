@@ -19,7 +19,8 @@ use GeneaLabs\LaravelModelCaching\CachedModel;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\VerifyUser whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\VerifyUser whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\VerifyUser whereVerificationToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
+ * @method static \Illuminate\Database\Eloquent\Builder|
+ * \GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
  * @mixin \Eloquent
  */
 class VerifyUser extends CachedModel

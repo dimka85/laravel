@@ -48,7 +48,8 @@ use Laravel\Passport\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereLastName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereNickname($value)
  * @property int $verified
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|
+ * \Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read \App\Models\VerifyUser $verifyUser
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereVerified($value)
  * @property-read \App\Models\Searchgame $searchgame

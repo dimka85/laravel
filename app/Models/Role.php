@@ -29,7 +29,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Role whereUpdatedAt($value)
  * @property int $basic
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Role whereBasic($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
+ * @method static \Illuminate\Database\Eloquent\Builder|
+ * \GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
  */
 class Role extends CachedModel
 {

@@ -29,7 +29,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\GameType withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\GameType withoutTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel disableCache()
- * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
+ * @method static \Illuminate\Database\Eloquent\Builder|
+ * \GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Game[] $games
  */
 class GameType extends CachedModel

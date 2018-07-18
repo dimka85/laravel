@@ -9,7 +9,8 @@ use GeneaLabs\LaravelModelCaching\CachedModel;
  *
  * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel disableCache()
- * @method static \Illuminate\Database\Eloquent\Builder|\GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
+ * @method static \Illuminate\Database\Eloquent\Builder|
+ * \GeneaLabs\LaravelModelCaching\CachedModel withCacheCooldownSeconds($seconds)
  * @mixin \Eloquent
  * @property-read \App\Models\Game $game
  */
