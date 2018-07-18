@@ -50,7 +50,7 @@ class UserRegisteredNotification extends Notification
     {
         $url = route('verify', ['token' => $this->user->verifyUser->verification_token]);
         
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject(__('Verify E-Mail'))
             ->markdown('email.auth.verification', ['url' => $url]);
     }
